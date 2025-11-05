@@ -27,7 +27,7 @@ function Navbar() {
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-gradient-to-r from-gray-900 via-blue-900 to-blue-700 shadow-lg backdrop-blur-md"
+          ? "bg-gradient-to-r from-black via-gray-950 to-blue-950 shadow-2xl backdrop-blur-xl"
           : "bg-transparent"
       }`}
     >
@@ -57,8 +57,10 @@ function Navbar() {
 
       {/* mobile dropdown */}
       <div
-        className={`md:hidden bg-gradient-to-b from-gray-900 via-blue-900 to-blue-700 absolute top-[64px] left-0 w-full flex flex-col items-center gap-6 py-8 text-lg text-gray-200 transition-all duration-500 ${
-          menuOpen ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none -translate-y-5"
+        className={`md:hidden bg-gradient-to-b from-black via-gray-950 to-blue-950 absolute top-[64px] left-0 w-full flex flex-col items-center gap-6 py-8 text-lg text-gray-200 transition-all duration-500 ${
+          menuOpen
+            ? "opacity-100 pointer-events-auto translate-y-0"
+            : "opacity-0 pointer-events-none -translate-y-5"
         }`}
       >
         <a href="#about" onClick={closeMenu} className="hover:text-blue-400">About</a>

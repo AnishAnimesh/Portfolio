@@ -11,28 +11,33 @@ function About() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-4xl font-bold mb-10 text-center"
+        className="text-4xl font-bold mb-12 text-center"
       >
         About <span className="text-blue-400">Me</span>
       </motion.h2>
 
-      {/* Content container */}
-      <div className="max-w-5xl flex flex-col md:flex-row items-center gap-10">
-        {/* Left side - Image */}
+      {/* Content Container */}
+      <div className="max-w-7xl flex flex-col md:flex-row items-center justify-center gap-14">
+        {/* Left Side - Image */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
-          className="w-40 h-40 md:w-56 md:h-56 rounded-full overflow-hidden shadow-lg shadow-blue-500/20 border-2 border-blue-500"
+          whileHover={{ scale: 1.03 }}
+          className="relative w-72 h-80 sm:w-80 sm:h-96 md:w-[400px] md:h-[460px] lg:w-[450px] lg:h-[520px]
+                     rounded-2xl overflow-hidden border-[3px] border-blue-500/40 shadow-[0_0_40px_rgba(59,130,246,0.4)]
+                     hover:shadow-[0_0_60px_rgba(59,130,246,0.6)] transition-all duration-500"
         >
           <img
-            src="/IMG_20230914_174153_1.jpg"
+            src="ANISH.jpg"
             alt="Anish Animesh Sahu"
             className="w-full h-full object-cover"
           />
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-gray-950/70 via-transparent to-transparent"></div>
         </motion.div>
 
-        {/* Right side - Text */}
+        {/* Right Side - Text */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -41,29 +46,28 @@ function About() {
         >
           <p className="text-lg text-gray-300 leading-relaxed mb-6">
             I’m <span className="text-blue-400 font-semibold">Anish Animesh Sahu</span>, 
-            a tech enthusiast and passionate learner currently pursuing 
-            <span className="text-blue-400"> Computer and Communication Engineering</span> 
+            a passionate developer and lifelong learner pursuing 
+            <span className="text-blue-400"> Computer and Communication Engineering </span> 
             at KJ Somaiya College of Engineering.  
-            I love exploring new technologies and blending creativity with logic to build 
-            user-focused digital solutions that make a difference.
+            I’m driven by curiosity, creativity, and the thrill of turning innovative ideas 
+            into functional, user-focused digital experiences.
           </p>
 
           <p className="text-lg text-gray-300 leading-relaxed mb-6">
-            My expertise lies in <span className="text-blue-400">Frontend and Full Stack Development</span>, 
-            where I combine technical precision with thoughtful UI/UX design.  
-            I’m skilled in technologies like <span className="text-blue-400">React, Node.js, Express.js, MongoDB,</span> 
-            and <span className="text-blue-400">Figma</span>.  
-            I enjoy transforming ideas into interactive, responsive, and visually appealing web applications.
+            My skill set spans <span className="text-blue-400">Frontend and Full Stack Development</span> — 
+            building scalable applications using <span className="text-blue-400">React, Node.js, Express.js, MongoDB,</span> 
+            and <span className="text-blue-400">Figma</span> for intuitive UI/UX design.  
+            I love blending logic with creativity to craft web solutions that feel elegant and efficient.
           </p>
 
           <p className="text-lg text-gray-300 leading-relaxed mb-6">
-            Beyond coding, I’m driven by curiosity and a passion for learning — whether it’s exploring 
-            AI integrations, improving design workflows, or optimizing performance for real-world applications.  
-            I believe great development happens where creativity meets logic.
+            Outside of development, I constantly explore emerging tech — from 
+            <span className="text-blue-400"> AI-driven interfaces</span> to performance optimization.  
+            My goal is to design experiences that not only work seamlessly but also inspire people through technology.
           </p>
 
-          {/* Education */}
-          <div className="mt-8">
+          {/* Education Section */}
+          <div className="mt-10">
             <h3 className="text-2xl font-semibold mb-4 text-blue-400">Education</h3>
             <ul className="space-y-3 text-gray-300">
               <li>
