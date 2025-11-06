@@ -2,7 +2,7 @@ const projects = [
   {
     title: "Netflix Clone",
     desc: "A responsive movie streaming UI built with React, Firebase, and TMDB API.",
-    link: "https://github.com/anishanimeshsahu/netflix-clone"
+    link: "https://github.com/AnishAnimesh/NETFLIX-Clone"
   },
   {
     title: "Driver Behavior Prediction System",
