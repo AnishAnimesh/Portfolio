@@ -4,7 +4,7 @@ const projects = [
   {
     title: "Netflix Clone",
     desc: "A responsive movie streaming UI built with React, Firebase, and TMDB API.",
-    link: "https://github.com/AnishAnimesh/NETFLIX-Clone",
+    link: "https://github.com/anishanimeshsahu/netflix-clone"
   },
   {
     title: "Discord ChatBot",
