@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 const projects = [
   {
     title: "Netflix Clone",
-    desc: "A responsive movie streaming UI built with React, Firebase, and TMDB API.",
-    link: "https://github.com/anishanimeshsahu/netflix-clone"
+    desc: "A responsive Netflix-style front-end demo built with semantic HTML and CSS. It replicates Netflix's hero banner, navigation, device showcases with looping video previews, download and kids profiles sections, FAQ layout, sign-in and email prompt. Perfect for UI practice, responsive design exercises, portfolio showcase, and beginner front-end learning and accessibility basics.",
+    link: "https://github.com/AnishAnimesh/Netflix-Clone.git"
   },
   {
     title: "Discord ChatBot",
