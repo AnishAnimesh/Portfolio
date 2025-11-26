@@ -5,7 +5,7 @@ function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-b from-gray-900 via-gray-950 to-gray-900 text-white px-4 sm:px-6 md:px-10 lg:px-16"
+      className="flex flex-col justify-center items-center text-center bg-gradient-to-b from-gray-900 via-gray-950 to-gray-900 text-white px-4 sm:px-6 md:px-10 lg:px-16 pt-28 pb-16"
     >
       {/* Name */}
       <motion.h1
@@ -53,8 +53,7 @@ function Hero() {
       >
         Currently pursuing <span className="text-blue-400"> Computer and Communication Engineering </span>   
         at KJ Somaiya College of Engineering, I’m passionate about learning, experimenting, 
-        and growing as a developer every single day. I enjoy combining creativity with logic to 
-        solve real-world problems and continuously improve my craft.
+        and growing as a developer every single day.
       </motion.p>
 
       {/* Buttons */}
@@ -85,20 +84,10 @@ function Hero() {
         transition={{ delay: 1.2, duration: 1 }}
         className="flex gap-5 sm:gap-6 mt-10 text-xl sm:text-2xl"
       >
-        <a
-          href="https://github.com/AnishAnimesh"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-blue-400 transition"
-        >
+        <a href="https://github.com/AnishAnimesh" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition">
           <FaGithub />
         </a>
-        <a
-          href="https://www.linkedin.com/in/anish-animesh-sahu-45330426a"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-blue-400 transition"
-        >
+        <a href="https://www.linkedin.com/in/anish-animesh-sahu-45330426a" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition">
           <FaLinkedin />
         </a>
       </motion.div>

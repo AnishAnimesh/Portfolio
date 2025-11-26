@@ -12,9 +12,9 @@ const projects = [
     link: "https://github.com/AnishAnimesh/Discord-Chatbot",
   },
   {
-    title: "Portfolio Website",
-    desc: "Personal portfolio showcasing my projects, skills, and journey as a developer.",
-    link: "#",
+    title: "CIVIC-AI",
+    desc: "Civic AI is a mobile-first platform that enables citizens to easily report and track civic issues using AI-powered image detection, real-time status updates, geolocation mapping, and community involvement. Built with React Native, Supabase, and Gemini Vision, it connects citizens and civic authorities for transparent, efficient issue resolution and smarter cities.",
+    link: "https://github.com/AnishAnimesh/CIVIC-AI_mini_project",
   },
 ];
 
@@ -22,7 +22,7 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="min-h-screen px-6 py-20 bg-gradient-to-b from-gray-900 via-gray-950 to-gray-900 text-white"
+      className="px-6 pt-16 pb-6 bg-gradient-to-b from-gray-900 via-gray-950 to-gray-900 text-white"
     >
       {/* Heading */}
       <motion.h2
@@ -46,7 +46,6 @@ function Projects() {
             className="group relative bg-gray-900 border border-gray-700 hover:border-blue-500/50 rounded-2xl p-6 shadow-lg 
                        hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] transition-all duration-500"
           >
-            {/* Gradient border overlay */}
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-600/10 to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
 
             <div className="relative z-10">
@@ -67,17 +66,7 @@ function Projects() {
         ))}
       </div>
 
-      {/* View More Button (Optional) */}
-      <div className="flex justify-center mt-14">
-        <a
-          href="https://github.com/AnishAnimesh"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-8 py-3 border border-blue-400 rounded-full text-blue-400 hover:bg-blue-500 hover:text-white transition-all duration-300 font-medium"
-        >
-          View More on GitHub
-        </a>
-      </div>
+   
     </section>
   );
 }
