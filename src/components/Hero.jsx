@@ -24,7 +24,7 @@ function Hero() {
         transition={{ delay: 0.2, duration: 1 }}
         className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-6"
       >
-        Full Stack Developer | UI/UX Enthusiast | Problem Solver
+        Developer | UI/UX Enthusiast | Data Analytics Explorer
       </motion.h2>
 
       {/* About paragraph */}
@@ -34,15 +34,13 @@ function Hero() {
         transition={{ delay: 0.4, duration: 1 }}
         className="text-sm sm:text-base md:text-lg text-gray-300 max-w-3xl mb-6 leading-relaxed"
       >
-        I’m a <span className="text-blue-400 font-semibold">Full Stack Developer </span> 
-        who loves transforming ideas into functional, user-friendly, and visually engaging web experiences.  
-        My expertise lies in building responsive and scalable applications using 
+        I’m a passionate developer with experience in building 
+        responsive, scalable, and user-friendly web applications using modern 
+        frontend and backend technologies. My expertise includes 
         <span className="text-blue-400"> React</span>, 
         <span className="text-blue-400"> Node.js</span>, 
         <span className="text-blue-400"> Express.js</span>, and 
-        <span className="text-blue-400"> MongoDB</span>.  
-        With a strong foundation in <span className="text-blue-400">UI/UX design</span> and 
-        tools like <span className="text-blue-400">Figma</span>, I strive to create digital products that feel intuitive, elegant, and efficient.
+        <span className="text-blue-400"> MongoDB</span>.
       </motion.p>
 
       <motion.p
@@ -51,9 +49,14 @@ function Hero() {
         transition={{ delay: 0.6, duration: 1 }}
         className="text-sm sm:text-base md:text-lg text-gray-300 max-w-3xl mb-8 leading-relaxed"
       >
-        Currently pursuing <span className="text-blue-400"> Computer and Communication Engineering </span>   
-        at KJ Somaiya College of Engineering, I’m passionate about learning, experimenting, 
-        and growing as a developer every single day.
+        I enjoy creating clean and intuitive UI/UX designs using 
+        <span className="text-blue-400"> Figma</span> and following strong coding 
+        practices with structured architecture. I also have foundational experience 
+        in <span className="text-blue-400"> Data Analytics</span> using 
+        <span className="text-blue-400"> Python (NumPy, Pandas, Matplotlib, Seaborn)</span> 
+        and <span className="text-blue-400"> SQL</span> to generate meaningful insights. 
+        I am eager to continuously learn new technologies and build impactful 
+        solutions that solve real-world problems.
       </motion.p>
 
       {/* Buttons */}
@@ -84,10 +87,20 @@ function Hero() {
         transition={{ delay: 1.2, duration: 1 }}
         className="flex gap-5 sm:gap-6 mt-10 text-xl sm:text-2xl"
       >
-        <a href="https://github.com/AnishAnimesh" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition">
+        <a
+          href="https://github.com/AnishAnimesh"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-blue-400 transition"
+        >
           <FaGithub />
         </a>
-        <a href="https://www.linkedin.com/in/anish-animesh-sahu-45330426a" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition">
+        <a
+          href="https://www.linkedin.com/in/anish-animesh-sahu-45330426a"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-blue-400 transition"
+        >
           <FaLinkedin />
         </a>
       </motion.div>

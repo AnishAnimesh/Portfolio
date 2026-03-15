@@ -2,20 +2,21 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: "Netflix Clone",
-    desc: "A responsive Netflix-style front-end demo built with semantic HTML and CSS. It replicates Netflix's hero banner, navigation, device showcases with looping video previews, download and kids profiles sections, FAQ layout, sign-in and email prompt. Perfect for UI practice, responsive design exercises, portfolio showcase, and beginner front-end learning and accessibility basics.",
-    link: "https://github.com/AnishAnimesh/Netflix-Clone.git"
+    title: "CIVIC-AI",
+    desc: "Civic AI is a mobile-first platform that enables citizens to easily report and track civic issues using AI-powered image detection, real-time status updates, geolocation mapping, and community involvement. Built with React Native, Supabase, and Gemini Vision, it connects citizens and civic authorities for transparent, efficient issue resolution and smarter cities.",
+    link: "https://github.com/AnishAnimesh/CIVIC-AI_mini_project",
+  },
+  {
+    title: "Housing Price Prediction ",
+    desc: "Built a housing price prediction model using Python, Scikit-Learn, and Pandas, comparing Random Forest, Decision Trees, and Linear Regression. Implemented an automated preprocessing pipeline with scaling, encoding, and median imputation. Applied 10-fold cross-validation with RMSE for evaluation. Structured modular code for experimentation and production, using Joblib for efficient model serialization and deployment.",
+    link: "https://github.com/AnishAnimesh/Housing-Price-Prediction.git"
   },
   {
     title: "Discord ChatBot",
     desc: "This project is a smart Discord chatbot built with Python and discord.py, powered by OpenAI’s GPT model. It provides instant AI responses when mentioned, maintains recent chat context, and includes a !reset command to clear memory. Secure, efficient, and lightweight, it enhances any Discord server with intelligent conversation features.",
     link: "https://github.com/AnishAnimesh/Discord-Chatbot",
   },
-  {
-    title: "CIVIC-AI",
-    desc: "Civic AI is a mobile-first platform that enables citizens to easily report and track civic issues using AI-powered image detection, real-time status updates, geolocation mapping, and community involvement. Built with React Native, Supabase, and Gemini Vision, it connects citizens and civic authorities for transparent, efficient issue resolution and smarter cities.",
-    link: "https://github.com/AnishAnimesh/CIVIC-AI_mini_project",
-  },
+
 ];
 
 function Projects() {
@@ -66,7 +67,7 @@ function Projects() {
         ))}
       </div>
 
-   
+
     </section>
   );
 }
