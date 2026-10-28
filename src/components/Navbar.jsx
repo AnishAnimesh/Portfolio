@@ -1,74 +1,128 @@
-import { useState, useEffect } from "react";
-import { HiMenuAlt3, HiX } from "react-icons/hi";
+import { useState, useEffect, useRef } from "react";
+import { HiBars3, HiXMark, HiArrowUpRight } from "react-icons/hi2";
+
+const links = [
+  "About",
+  "Projects",
+  "Experience",
+  "Skills",
+  "Education",
+  "Contact",
+];
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState("home");
+  const menuButton = useRef(null);
+  const header = useRef(null);
 
-  // toggle menu on mobile
-  const toggleMenu = () => setMenuOpen(!menuOpen);
-  const closeMenu = () => setMenuOpen(false);
-
-  // scroll detection
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      },
+      { rootMargin: "-15% 0px -65% 0px" },
+    );
+    document
+      .querySelectorAll("main section[id]")
+      .forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+        menuButton.current?.focus();
+      }
+    };
+    const onPointerDown = (event) => {
+      if (!header.current?.contains(event.target)) setMenuOpen(false);
+    };
+    const onResize = () => {
+      if (window.innerWidth >= 960) setMenuOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    window.addEventListener("pointerdown", onPointerDown);
+    window.addEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      window.removeEventListener("pointerdown", onPointerDown);
+      window.removeEventListener("resize", onResize);
+    };
+  }, [menuOpen]);
+
+  const navigate = (label) => {
+    setMenuOpen(false);
+    setActive(label.toLowerCase());
+    // Move focus out of the hidden dropdown to the destination section.
+    requestAnimationFrame(() =>
+      document
+        .getElementById(label.toLowerCase())
+        ?.focus({ preventScroll: true }),
+    );
+  };
+
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-gradient-to-r from-black via-gray-950 to-blue-950 shadow-2xl backdrop-blur-xl"
-          : "bg-transparent"
-      }`}
-    >
-      {/* reduced side padding */}
-      <div className="w-full flex justify-between items-center py-4 px-4 md:px-6">
-        {/* name */}
-        <h1 className="text-xl sm:text-2xl font-bold text-white cursor-pointer">
-          Anish Animesh Sahu<span className="text-blue-400"></span>
-        </h1>
-
-        {/* desktop links */}
-        <ul className="hidden md:flex gap-6 lg:gap-8 text-gray-200">
-          <li><a href="#about" className="hover:text-blue-400 transition">About</a></li>
-          <li><a href="#projects" className="hover:text-blue-400 transition">Projects</a></li>
-          <li><a href="#skills" className="hover:text-blue-400 transition">Skills</a></li>
-          <li><a href="#contact" className="hover:text-blue-400 transition">Contact</a></li>
-        </ul>
-
-        {/* mobile menu icon */}
-        <div
-          className="md:hidden text-gray-200 text-3xl cursor-pointer"
-          onClick={toggleMenu}
+    <header className="site-header" ref={header}>
+      <nav className="container nav-shell" aria-label="Main navigation">
+        <a
+          href="#home"
+          className="nav-brand"
+          onClick={() => navigate("Home")}
+          aria-label="Anish Animesh Sahu — home"
         >
-          {menuOpen ? <HiX /> : <HiMenuAlt3 />}
+          <span>Anish Animesh Sahu</span>
+        </a>
+        <ul className="desktop-links">
+          {links.map((label) => (
+            <li key={label}>
+              <a
+                href={`#${label.toLowerCase()}`}
+                onClick={() => navigate(label)}
+                aria-current={
+                  active === label.toLowerCase() ? "location" : undefined
+                }
+              >
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <a className="nav-contact" href="#contact">
+          Let’s talk <HiArrowUpRight aria-hidden="true" />
+        </a>
+        <button
+          ref={menuButton}
+          className="menu-toggle"
+          type="button"
+          aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <HiXMark /> : <HiBars3 />}
+        </button>
+        <div id="mobile-navigation" className="mobile-links" hidden={!menuOpen}>
+          {links.map((label) => (
+            <a
+              key={label}
+              href={`#${label.toLowerCase()}`}
+              onClick={() => navigate(label)}
+              aria-current={
+                active === label.toLowerCase() ? "location" : undefined
+              }
+            >
+              {label}
+              <HiArrowUpRight aria-hidden="true" />
+            </a>
+          ))}
         </div>
-      </div>
-
-      {/* mobile dropdown */}
-      <div
-        className={`md:hidden bg-gradient-to-b from-black via-gray-950 to-blue-950 absolute top-[64px] left-0 w-full flex flex-col items-center gap-6 py-8 text-lg text-gray-200 transition-all duration-500 ${
-          menuOpen
-            ? "opacity-100 pointer-events-auto translate-y-0"
-            : "opacity-0 pointer-events-none -translate-y-5"
-        }`}
-      >
-        <a href="#about" onClick={closeMenu} className="hover:text-blue-400">About</a>
-        <a href="#projects" onClick={closeMenu} className="hover:text-blue-400">Projects</a>
-        <a href="#skills" onClick={closeMenu} className="hover:text-blue-400">Skills</a>
-        <a href="#contact" onClick={closeMenu} className="hover:text-blue-400">Contact</a>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 }
 
